@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.len.mapper.SysNewMapper">
+    <resultMap id="BaseResultMap" type="com.len.entity.SysNew">
+        <id column="new_id" jdbcType="INTEGER" property="newId" />
+        <result column="new_name" jdbcType="VARCHAR" property="newName" />
+        <result column="new_type" jdbcType="INTEGER" property="newType" />
+        <result column="new_time" jdbcType="TIMESTAMP" property="newTime" />
+    </resultMap>
+
+
+    <select id="selectListByPage" parameterType="com.len.entity.SysNew"  resultMap="BaseResultMap">
+        SELECT * FROM sys_new
+        <!--<where>
+            <if test="newName!=null and newName!=''"> and newName like '%${newName}%'</if>
+            <if test="newType!=0"> and newType = ${newType}</if>
+        </where>-->
+    </select>
+
+
+</mapper>
